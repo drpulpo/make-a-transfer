@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "InterviewPreparation"
+    }
+  },
+  "defaultProject": "InterviewPreparation",
+  "cli": {
+    "analytics": "bdc967bc-e506-429a-996c-b3bac554d700"
+  }
 }

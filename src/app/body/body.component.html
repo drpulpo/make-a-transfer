@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <app-modal
+      #modal
+      [newTransfer]="newTransfer"
+      (newTransferAccepted)="onNewTransferAccepted($event)"
+    ></app-modal>
+    <app-transfer
+      #transferCmp
+      [balance]="balance"
+      [balanceText]="balanceText"
+      (newTransferEvent)="onNewTransfer($event)"
+      class="app-transfer"
+    ></app-transfer>
+    <app-transfer-catalog
+      [transfers]="transfersInView"
+      [dateSortChar]="dateSortChar"
+      [beneficiarySortChar]="beneficiarySortChar"
+      [amountSortChar]="amountSortChar"
+      (filterChanged)="onFilterChanged($event)"
+      (dateSortPressed)="onDateSortPressed($event)"
+      (beneficiarySortPressed)="onBeneficiarySortPressed($event)"
+      (amountSortPressed)="onAmountSortPressed($event)"
+      class="app-transfer-catalog"
+    ></app-transfer-catalog>
+  </div>
+</div>

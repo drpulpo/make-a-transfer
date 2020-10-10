@@ -1,0 +1,59 @@
+<div class="card">
+  <div class="card-header">
+    <div class="header-icon">
+      <i class="material-icons">cached</i>
+    </div>
+    <div class="header-title">Make a Transfer</div>
+  </div>
+  <div class="card-body">
+    <form #transferForm="ngForm" class="form-container">
+      <label class="card-row">FROM ACCOUNT</label>
+      <input
+        name="fromAccount"
+        class="card-row"
+        type="text"
+        [(ngModel)]="balanceText"
+        disabled
+      />
+      <label class="card-row">TO ACCOUNT</label>
+      <input
+        id="receiversInput"
+        name="receiversInput"
+        class="card-row"
+        [(ngModel)]="toAccount"
+        placeholder="Georgia Power Electric Company"
+        list="receiversList"
+        required
+        min="4"
+      />
+      <datalist id="receiversList">
+        <option>Backbase</option>
+        <option>The Tea Lounge</option>
+        <option>Texaco</option>
+        <option>Amazon Online Store</option>
+        <option>7-Eleven</option>
+        <option>H&M Online Store</option>
+        <option>Jerry Hildreth</option>
+        <option>Southern Electric Company</option>
+        <option>Whole Foods</option>
+      </datalist>
+      <label class="card-row">AMOUNT</label>
+      <input
+        class="card-row"
+        type="number"
+        [(ngModel)]="amount"
+        placeholder="$ 0.00"
+        name="amountInput"
+      />
+      <div class="card-row">
+        <button
+          class="button"
+          (click)="addNewTransfer()"
+          [disabled]="!transferForm.valid"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

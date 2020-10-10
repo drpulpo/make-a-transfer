@@ -1,0 +1,22 @@
+.navbar {
+  background-color: #fefefe;
+  border-bottom: 1px solid #ff9361;
+  height: 80px;
+  width: 100%;
+}
+
+.logo {
+  width: 95%;
+  max-width: 250px;
+  margin: 25px 0 0 100px;
+}
+
+@media only screen and (max-width: 900px) {
+  .navbar {
+    text-align: center;
+  }
+  .logo {
+    width: 70%;
+    margin: 25px auto 0 0;
+  }
+}

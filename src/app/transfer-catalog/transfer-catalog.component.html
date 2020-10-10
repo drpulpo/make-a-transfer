@@ -1,0 +1,60 @@
+<div class="card">
+  <div class="card-header">
+    <div class="header-icon">
+      <i class="material-icons">business_center</i>
+    </div>
+    <div class="header-title">Recent Transactions</div>
+  </div>
+  <div class="card-body">
+    <div class="transfer-list-header">
+      <div class="filters-container">
+        <input
+          type="text"
+          [(ngModel)]="filter"
+          placeholder="Search by typing..."
+          (keyup)="onFilterChanged($event.target.value)"
+        />
+        <div class="filter-clear" (click)="onClearFilter()">X</div>
+      </div>
+      <div class="sorting-container">
+        <label class="sorting-label">Sort By</label>
+        <button class="button" (click)="onDateSortPressed($event)">
+          DATE {{ dateSortChar }}
+        </button>
+        <button class="button" (click)="onBeneficiarySortPressed($event)">
+          BENEFICIARY {{ beneficiarySortChar }}
+        </button>
+        <button class="button" (click)="onAmountSortPressed($event)">
+          AMOUNT {{ amountSortChar }}
+        </button>
+      </div>
+    </div>
+    <div class="transfer-list">
+      <div *ngFor="let transfer of transfers" class="table-row">
+        <div
+          class="categoryCode"
+          [ngStyle]="{ 'background-color': transfer.categoryCode }"
+        ></div>
+        <div class="date-container">
+          <div>
+            {{ transfer.dates.valueDate | date: mediumDate }}
+          </div>
+        </div>
+        <div class="logo-container">
+          <img class="logo" [src]="transfer.merchant.name | getLogoUrl" />
+        </div>
+        <div class="receiver">
+          <div>
+            {{ transfer.merchant.name }}
+          </div>
+          <div>
+            {{ transfer.transaction.type }}
+          </div>
+        </div>
+        <div class="amount">
+          <div>-${{ transfer.transaction.amountCurrency.amount }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

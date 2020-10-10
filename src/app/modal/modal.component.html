@@ -1,0 +1,11 @@
+<div #myModal class="container">
+  <div class="content">
+    <p>Are you sure that you want to add the transaction:</p>
+    <p>Transfer To: {{ newTransfer.merchant.name }}</p>
+    <p>
+      Amount: ${{ newTransfer.transaction.amountCurrency.amount.toFixed(2) }}
+    </p>
+    <button class="button" (click)="accept()">Transfer</button>
+    <button class="button" (click)="close()">Cancel</button>
+  </div>
+</div>
