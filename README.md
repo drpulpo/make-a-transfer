@@ -8,6 +8,12 @@ I have not used CSS libraries as commanded and developed all in plain CSS as sug
 I have separated the UI concerns in different visual components and implemented a Transfer Service to fetch data. I've generated a main app component and generated separate header and body components. Inside the body I created a form component to be able to create transfers and a transfer catalog.
 The body component keeps the state of the view and binds with inputs and outputs with the two child transfer and transfer catalog component.
 
+## Code Downloading and Installation
+
+Clone the repository using `git clone https://github.com/drpulpo/make-a-transfer.git` or unzip the provided file
+cd make-a-transfer
+npm install
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
