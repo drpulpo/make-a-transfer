@@ -11,8 +11,10 @@ The body component keeps the state of the view and binds with inputs and outputs
 ## Code Downloading and Installation
 
 Clone the repository using `git clone https://github.com/drpulpo/make-a-transfer.git` or unzip the provided file
-cd make-a-transfer
-npm install
+
+`cd make-a-transfer`
+
+`npm install`
 
 ## Development server
 
